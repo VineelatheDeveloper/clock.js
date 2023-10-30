@@ -19,11 +19,12 @@
     <script>
           function time(){
           let clock = new Date();
-          let hr = clock.getHours()%12;
+          let hr = clock.getHours();
           let min =  clock.getMinutes();
           let sec = clock.getSeconds();
           let ampm = hr >= 12 ? 'PM' : 'AM';
-
+          if(hr>12)
+          hr = hr-12;
           let hrs = document.querySelector("#hrs");
           if(hr < 10)
           hr = "0"+hr;
