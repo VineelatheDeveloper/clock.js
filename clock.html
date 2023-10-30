@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+  </head>
+  <body>
+    <div id="clock" style="margin-left: 200px; margin-top: 200px">
+      <span id="hrs" style="font-size: larger">00</span>
+      <span style="font-size: larger">:</span>
+      <span id="min" style="font-size: larger">00</span>
+      <span style="font-size: larger">:</span>
+      <span id="sec" style="font-size: larger">00</span>
+      <span id="ampm" style="font-size: larger"></span>
+
+
+    </div>
+    <script>
+          function time(){
+          let clock = new Date();
+          let hr = clock.getHours()%12;
+          let min =  clock.getMinutes();
+          let sec = clock.getSeconds();
+          let ampm = hr >= 12 ? 'PM' : 'AM';
+
+          let hrs = document.querySelector("#hrs");
+          if(hr < 10)
+          hr = "0"+hr;
+          hrs.innerHTML = hr;
+          let mins = document.querySelector("#min");
+          if(min <10)
+          min = "0"+min
+          mins.innerHTML = min;
+          let secs = document.querySelector("#sec") ;
+          if(sec <10)
+          sec = "0"+sec
+          secs.innerHTML = sec;
+          let ampm1 = document.querySelector("#ampm");
+          ampm1.innerHTML = ampm;
+          }
+          setInterval(time,1000)
+    </script>
+  </body>
+</html>
